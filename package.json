@@ -1,0 +1,51 @@
+{
+  "name": "api-querier",
+  "version": "0.0.1",
+  "description": "A simple wrapper around axios to work with remote API resources as though they were local",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && npm run typedoc && git add -A src && git add -A docs",
+    "postversion": "git push && git push --tags",
+    "typedoc": "typedoc --out docs src --theme minimal"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sopherapps/api-querier.git"
+  },
+  "keywords": [
+    "axios",
+    "REST",
+    "API",
+    "client"
+  ],
+  "author": "Martin Ahindura",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sopherapps/api-querier/issues"
+  },
+  "homepage": "https://github.com/sopherapps/api-querier#readme",
+  "files": [
+    "lib/**/*"
+  ],
+  "dependencies": {
+    "axios": "^0.19.0"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0",
+    "prettier": "^1.17.1",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.17.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typedoc": "^0.14.2",
+    "typescript": "^3.5.1",
+    "@types/jest": "^24.0.13"
+  }
+}
