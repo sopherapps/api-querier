@@ -1,6 +1,6 @@
 {
   "name": "api-querier",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "A simple wrapper around axios to work with remote API resources as though they were local",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

@@ -12,7 +12,11 @@ export interface IApiQuerier {
   [key: string]: IResourceQuerier;
 }
 
-export const processRemoteResources = (resource: string, baseURL: string, commonHeaders: any = {}): IResourceQuerier => {
+export const processRemoteResources = (
+  resource: string,
+  baseURL: string,
+  commonHeaders: any = {},
+): IResourceQuerier => {
   const config = { baseURL };
   return {
     create: (payload: any, headers: any = {}) =>
