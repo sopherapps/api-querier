@@ -1,4 +1,4 @@
-# api-querier
+# api-querier [![Build Status](https://travis-ci.org/sopherapps/api-querier.svg?branch=master)](https://travis-ci.org/sopherapps/api-querier)
 
 A simple wrapper around [axios](https://github.com/axios/axios) to work with remote API resources as though they were local
 
