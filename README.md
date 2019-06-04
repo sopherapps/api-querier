@@ -16,7 +16,7 @@ This package provides two entities that you could use in your code.
 It exports, by default, a function that can make an ApiQuerier object.
 
 ```typescript
-        import makeApiQuerier, {IApiQuerier, IResourceQuerier} from 'api-querier';
+        import { makeApiQuerier, IApiQuerier, IResourceQuerier} from 'api-querier';
 
         const resourceNames = ['books', 'tables', 'pens'];
         const baseURL = 'https://your_api_base_url.com';
