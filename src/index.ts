@@ -1,6 +1,6 @@
 import axios, { AxiosPromise } from 'axios';
 
-export interface IResource {
+export interface IResourceQuerier {
   list: (queryObj?: any, headers?: any) => Promise<AxiosPromise<any>>;
   getOne: (id: string | number, headers?: any) => Promise<AxiosPromise<any>>;
   update: (id: string | number, payload: any, headers?: any) => Promise<AxiosPromise<any>>;
@@ -8,11 +8,11 @@ export interface IResource {
   destroy: (id: string | number, headers?: any) => Promise<AxiosPromise<any>>;
 }
 
-export interface IResourcesObject {
-  [key: string]: IResource;
+export interface IApiQuerier {
+  [key: string]: IResourceQuerier;
 }
 
-export const processRemoteResources = (resource: string, baseURL: string, commonHeaders: any = {}): IResource => {
+export const processRemoteResources = (resource: string, baseURL: string, commonHeaders: any = {}): IResourceQuerier => {
   const config = { baseURL };
   return {
     create: (payload: any, headers: any = {}) =>
@@ -44,12 +44,12 @@ export const processRemoteResources = (resource: string, baseURL: string, common
   };
 };
 
-export const getResources = (
+export const makeApiQuerier = (
   resourceNames: string[],
   baseURL: string = 'http://localhost:8080/api',
   commonHeaders: any = {},
   resourceProcessor: (resource: string, baseURL: string, commonHeaders?: any) => any = processRemoteResources,
-): IResourcesObject => {
+): IApiQuerier => {
   const resources: any = {};
   resourceNames.forEach(resourceName => {
     resources[resourceName] = resourceProcessor(resourceName, baseURL, commonHeaders);
@@ -57,4 +57,4 @@ export const getResources = (
   return resources;
 };
 
-export default getResources;
+export default makeApiQuerier;
