@@ -62,3 +62,6 @@ typings/
 
 # The auto-generated build files
 /lib
+
+# No test coverage
+/testcoverage
