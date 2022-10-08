@@ -1,5 +1,7 @@
 # api-querier [![Build Status](https://travis-ci.org/sopherapps/api-querier.svg?branch=master)](https://travis-ci.org/sopherapps/api-querier) [![Coverage Status](https://coveralls.io/repos/github/sopherapps/api-querier/badge.svg?branch=master)](https://coveralls.io/github/sopherapps/api-querier?branch=master)
 
+__THIS PACKAGE IS NO LONGER BEING MAINTAINED.__
+
 A simple wrapper around [axios](https://github.com/axios/axios) to work with remote API resources as though they were local
 
 ## Installation
